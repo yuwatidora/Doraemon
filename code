@@ -11,7 +11,7 @@ class Doraemon(pygame.sprite.Sprite):
         
 
         # load the sprite sheet
-        sheet=pygame.image.load("doraemon1.png").convert()
+        sheet=pygame.image.load("index.png").convert()
 
 
         # create a list of images that correspond to the different animation
@@ -24,7 +24,7 @@ class Doraemon(pygame.sprite.Sprite):
            print(patch)
            self.frame[i].blit(sheet,(0,0),patch)
            
-##           self.frame[i].set_colorkey((255,255,255))
+           self.frame[i].set_colorkey((255,255,255))
 
         # set the image and rect properties to the first frame.
         self.anim_frame=0
@@ -61,7 +61,7 @@ class Doraemon(pygame.sprite.Sprite):
         if self.rect.y <420:
             self.deltay = 0
             
-              
+                
         self.rect.x += self.deltax
 
         
@@ -137,7 +137,7 @@ def main():
         all_sprites.update()
         
         
-
+        main_surface.blit(background,(0,0))
         # redraw the screen
         
         pygame.draw.rect(main_surface,(255,255,255),(0,0,1200,0))
@@ -156,3 +156,4 @@ def main():
 
 if __name__=='__main__':    
     main()
+
