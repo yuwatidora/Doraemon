@@ -1,5 +1,4 @@
 
-
 import sys
 import pygame
 import time
@@ -20,8 +19,11 @@ class Doraemon(pygame.sprite.Sprite):
         self.frame=[]
         for i in range(6):
            self.frame.append(pygame.Surface([80,120]).convert())
-           patch = (100*(i%4),5+126*(i//4),80,120)                            
-           self.frame[i].blit(sheet,(0,0), patch)
+           
+           patch = (100*(i%4),5+126*(i//4),80,120)
+           print(patch)
+           self.frame[i].blit(sheet,(0,0),patch)
+           
 ##           self.frame[i].set_colorkey((255,255,255))
 
         # set the image and rect properties to the first frame.
@@ -41,7 +43,7 @@ class Doraemon(pygame.sprite.Sprite):
     def update(self):
         # increase the animation frame to the next panel
         self.anim_frame = (self.anim_frame+1)%6
-
+    
         # set the image from the animation frame, flip it if it is moving
         # to the right
         if self.deltax>0:
@@ -59,8 +61,11 @@ class Doraemon(pygame.sprite.Sprite):
         if self.rect.y <420:
             self.deltay = 0
             
-                
+              
         self.rect.x += self.deltax
+
+        
+        
 
         
 
@@ -134,10 +139,14 @@ def main():
         
 
         # redraw the screen
-        all_sprites.draw(main_surface)
+        
         pygame.draw.rect(main_surface,(255,255,255),(0,0,1200,0))
 
-##        all_sprites.draw(main_surface)
+        all_sprites.draw(main_surface)
+
+      
+
+
 
         # flip the drawn surface onto the monitor
         pygame.display.flip()
