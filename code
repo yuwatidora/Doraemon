@@ -58,7 +58,7 @@ class Doraemon(pygame.sprite.Sprite):
         if self.rect.y >550:
             self.deltay = 0
             
-        if self.rect.y <420:
+        if self.rect.y <250:
             self.deltay = 0
             
                 
