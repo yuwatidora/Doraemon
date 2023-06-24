@@ -156,7 +156,3 @@ def main():
 
 if __name__=='__main__':    
     main()
-
-# Good job.  One thing to work on is making sure each patch fits the entire frame.  That can be tricky.  You have to look at it
-# with windows paint or some other software.  
-# Score: 95
